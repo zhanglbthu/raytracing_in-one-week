@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zhanglb/code/project/raytracing/in-one-weekend/color.h
+vec3.h
+/home/zhanglb/code/project/raytracing/in-one-weekend/vec3.h
+iostream
+-
+
+/home/zhanglb/code/project/raytracing/in-one-weekend/main.cpp
+color.h
+/home/zhanglb/code/project/raytracing/in-one-weekend/color.h
+ray.h
+/home/zhanglb/code/project/raytracing/in-one-weekend/ray.h
+vec3.h
+/home/zhanglb/code/project/raytracing/in-one-weekend/vec3.h
+iostream
+-
+
+/home/zhanglb/code/project/raytracing/in-one-weekend/ray.h
+vec3.h
+/home/zhanglb/code/project/raytracing/in-one-weekend/vec3.h
+
+/home/zhanglb/code/project/raytracing/in-one-weekend/vec3.h
+cmath
+-
+iostream
+-
+

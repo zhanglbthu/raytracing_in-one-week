@@ -1,0 +1,3 @@
+/home/zhanglb/code/project/raytracing/in-one-weekend/build/CMakeFiles/rebuild_cache.dir
+/home/zhanglb/code/project/raytracing/in-one-weekend/build/CMakeFiles/edit_cache.dir
+/home/zhanglb/code/project/raytracing/in-one-weekend/build/CMakeFiles/main.dir

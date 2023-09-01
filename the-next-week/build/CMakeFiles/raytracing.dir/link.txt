@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -Wall -fopenmp  -rdynamic CMakeFiles/raytracing.dir/main.cpp.o  -o raytracing 

@@ -12,6 +12,7 @@ SET(SOURCES
         main.cpp)
 
 SET(INCLUDES
+        external/stb_image.h
         color.h
         ray.h
         hittable.h
@@ -19,6 +20,10 @@ SET(INCLUDES
         rtweekend.h
         camera.h
         interval.h
+        aabb.h
+        bvh.h
+        texture.h
+        rtw_stb_image.h
         vec3.h)
 
 SET(CMAKE_CXX_STANDARD 11)

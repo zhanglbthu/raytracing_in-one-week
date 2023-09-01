@@ -1,4 +1,4 @@
 cd build
 cmake ..
 make
-./main > image.bmp
+./main > image.ppm

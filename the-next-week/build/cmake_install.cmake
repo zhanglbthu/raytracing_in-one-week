@@ -1,4 +1,4 @@
-# Install script for directory: /home/zhanglb/code/project/raytracing/in-one-weekend
+# Install script for directory: /home/zhanglb/code/project/raytracing/the-next-week
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zhanglb/code/project/raytracing/in-one-weekend/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zhanglb/code/project/raytracing/the-next-week/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

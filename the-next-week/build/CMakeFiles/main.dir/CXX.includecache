@@ -112,6 +112,10 @@ hittable.h
 texture.h
 /home/zhanglb/code/project/raytracing/the-next-week/texture.h
 
+/home/zhanglb/code/project/raytracing/the-next-week/perlin.h
+rtweekend.h
+/home/zhanglb/code/project/raytracing/the-next-week/rtweekend.h
+
 /home/zhanglb/code/project/raytracing/the-next-week/ray.h
 vec3.h
 /home/zhanglb/code/project/raytracing/the-next-week/vec3.h
@@ -153,6 +157,8 @@ rtweekend.h
 /home/zhanglb/code/project/raytracing/the-next-week/rtweekend.h
 rtw_stb_image.h
 /home/zhanglb/code/project/raytracing/the-next-week/rtw_stb_image.h
+perlin.h
+/home/zhanglb/code/project/raytracing/the-next-week/perlin.h
 
 /home/zhanglb/code/project/raytracing/the-next-week/vec3.h
 cmath

@@ -23,6 +23,7 @@ SET(INCLUDES
         aabb.h
         bvh.h
         texture.h
+        perlin.h
         rtw_stb_image.h
         vec3.h)
 

@@ -11,6 +11,8 @@ public:
         auto n = cross(u, v);
         normal = unit_vector(n);
         D = dot(normal, Q);
+        w = n / dot(n, n);
+
         set_bounding_box();
     }
     virtual void set_bounding_box()
@@ -31,11 +33,28 @@ public:
             return false;
         auto intersection = r.at(t);
 
+        // determine if the intersection is inside the quad
+        vec3 planar_hitpt_vector = intersection - Q;
+        auto alpha = dot(w, cross(planar_hitpt_vector, v));
+        auto beta = dot(w, cross(u, planar_hitpt_vector));
+        if(!is_interior(alpha, beta, rec))
+            return false;
+
         rec.t = t;
         rec.p = intersection;
         rec.mat = mat;
         rec.set_face_normal(r, normal);
 
+        return true;
+    }
+
+    virtual bool is_interior(double a, double b, hit_record &rec) const
+    {
+        if((a < 0) || (1 < a) || (b < 0) || (1 < b))
+            return false;
+
+        rec.u = a;
+        rec.v = b;
         return true;
     }
 
@@ -47,5 +66,7 @@ private:
 
     vec3 normal;
     double D;
+
+    vec3 w;
 };
 #endif

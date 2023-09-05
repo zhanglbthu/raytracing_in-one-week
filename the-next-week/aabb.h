@@ -22,7 +22,7 @@ public:
         z = interval(fmin(a[2], b[2]), fmax(a[2], b[2]));
     }
 
-    aabb(const aabb& box0, const aabb& box1)
+    aabb(const aabb &box0, const aabb &box1)
     {
         x = interval(box0.x, box1.x);
         y = interval(box0.y, box1.y);
@@ -70,5 +70,11 @@ public:
         return true;
     }
 };
-
+aabb operator+(const aabb &bbox, const vec3 &offset)
+{
+    return aabb(bbox.x + offset.x(), bbox.y + offset.y(), bbox.z + offset.z());
+}
+aabb operator+(const vec3& offset, const aabb& bbox) {
+    return bbox + offset;
+}
 #endif

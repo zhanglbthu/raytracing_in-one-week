@@ -101,6 +101,8 @@ texture.h
 /home/zhanglb/code/project/raytracing/the-next-week/texture.h
 bvh.h
 /home/zhanglb/code/project/raytracing/the-next-week/bvh.h
+hittable.h
+/home/zhanglb/code/project/raytracing/the-next-week/hittable.h
 quad.h
 /home/zhanglb/code/project/raytracing/the-next-week/quad.h
 chrono
@@ -123,6 +125,8 @@ rtweekend.h
 /home/zhanglb/code/project/raytracing/the-next-week/rtweekend.h
 hittable.h
 /home/zhanglb/code/project/raytracing/the-next-week/hittable.h
+hittable_list.h
+/home/zhanglb/code/project/raytracing/the-next-week/hittable_list.h
 
 /home/zhanglb/code/project/raytracing/the-next-week/ray.h
 vec3.h

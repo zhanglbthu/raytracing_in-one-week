@@ -5,6 +5,7 @@
 #include "sphere.h"
 #include "texture.h"
 #include "bvh.h"
+#include "hittable.h"
 #include "quad.h"
 
 #include <chrono>
@@ -233,6 +234,9 @@ void cornell_box() {
     world.add(make_shared<quad>(point3(555,555,555), vec3(-555,0,0), vec3(0,0,-555), white));
     world.add(make_shared<quad>(point3(0,0,555), vec3(555,0,0), vec3(0,555,0), white));
 
+    world.add(box(point3(130, 0, 65), point3(295, 165, 230), white));
+    world.add(box(point3(265, 0, 295), point3(430, 330, 460), white));
+
     camera cam;
 
     cam.aspect_ratio      = 1.0;
@@ -252,7 +256,7 @@ void cornell_box() {
 }
 int main()
 {
-    switch (6)
+    switch (7)
     {
     case 1:
         random_spheres();

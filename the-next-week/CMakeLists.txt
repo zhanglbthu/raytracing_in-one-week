@@ -26,6 +26,7 @@ SET(INCLUDES
         perlin.h
         rtw_stb_image.h
         quad.h
+        image.h
         vec3.h)
 
 SET(CMAKE_CXX_STANDARD 11)

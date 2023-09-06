@@ -29,14 +29,32 @@ hittable.h
 /home/zhanglb/code/project/raytracing/the-next-week/hittable.h
 material.h
 /home/zhanglb/code/project/raytracing/the-next-week/material.h
+image.h
+/home/zhanglb/code/project/raytracing/the-next-week/image.h
+iomanip
+-
+chrono
+-
 iostream
 -
 
 /home/zhanglb/code/project/raytracing/the-next-week/color.h
 vec3.h
 /home/zhanglb/code/project/raytracing/the-next-week/vec3.h
+image.h
+/home/zhanglb/code/project/raytracing/the-next-week/image.h
 iostream
 -
+
+/home/zhanglb/code/project/raytracing/the-next-week/constant_medium.h
+rtweekend.h
+/home/zhanglb/code/project/raytracing/the-next-week/rtweekend.h
+hittable.h
+/home/zhanglb/code/project/raytracing/the-next-week/hittable.h
+material.h
+/home/zhanglb/code/project/raytracing/the-next-week/material.h
+texture.h
+/home/zhanglb/code/project/raytracing/the-next-week/texture.h
 
 /home/zhanglb/code/project/raytracing/the-next-week/external/stb_image.h
 stb_image.h
@@ -84,6 +102,18 @@ memory
 vector
 -
 
+/home/zhanglb/code/project/raytracing/the-next-week/image.h
+cassert
+-
+cstdlib
+-
+cstdio
+-
+cstring
+-
+vec3.h
+/home/zhanglb/code/project/raytracing/the-next-week/vec3.h
+
 /home/zhanglb/code/project/raytracing/the-next-week/interval.h
 cmath
 -
@@ -105,6 +135,8 @@ hittable.h
 /home/zhanglb/code/project/raytracing/the-next-week/hittable.h
 quad.h
 /home/zhanglb/code/project/raytracing/the-next-week/quad.h
+constant_medium.h
+/home/zhanglb/code/project/raytracing/the-next-week/constant_medium.h
 chrono
 -
 

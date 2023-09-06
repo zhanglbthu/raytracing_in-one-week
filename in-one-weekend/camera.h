@@ -29,8 +29,8 @@ public:
     {
         initialize();
 
-        std::cout << "P3\n"
-                  << image_width << ' ' << image_height << "\n255\n";
+        // std::cout << "P3\n"
+        //           << image_width << ' ' << image_height << "\n255\n";
 
         for (int j = 0; j < image_height; ++j)
         {

@@ -6,7 +6,9 @@
 #include "color.h"
 #include "hittable.h"
 #include "material.h"
-
+#include "image.h"
+#include <iomanip>
+#include <chrono>
 #include <iostream>
 
 class camera
@@ -27,18 +29,33 @@ public:
     double defocus_angle = 0; // Variation angle of rays through each pixel
     double focus_dist = 10;   // Distance from camera lookfrom point to plane of perfect focus
 
+    std::string outputfile = "image.bmp";
+
+    ~camera(){delete img;}
+
     void render(const hittable &world)
     {
         initialize();
 
         std::cout << "P3\n"
                   << image_width << ' ' << image_height << "\n255\n";
-
+        auto start_time = std::chrono::high_resolution_clock::now();
         for (int j = 0; j < image_height; ++j)
         {
-            std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
             for (int i = 0; i < image_width; ++i)
             {
+                // TODO: 美观地输出进度和剩余时间
+                double progress = (double)(j * image_width + i) / (image_width * image_height);
+                auto current_time = std::chrono::system_clock::now();
+                // double
+                auto elapsed_time = std::chrono::duration_cast<std::chrono::duration<double>>(current_time - start_time);
+                auto remaining_time = std::chrono::duration_cast<std::chrono::duration<double>>(elapsed_time / progress - elapsed_time);
+
+                std::clog << "\rProgress: " << std::fixed << std::setprecision(2) << progress * 100 << "%"
+                          << " Elapsed time: " << std::fixed << std::setprecision(0) << elapsed_time.count() << "s"
+                            << " Remaining time: " << std::fixed << std::setprecision(0) << remaining_time.count() << "s"
+                          << std::flush;
+                
                 color pixel_color(0, 0, 0);
                 for (int sample = 0; sample < samples_per_pixel; ++sample)
                 {
@@ -48,7 +65,7 @@ public:
                 write_color(std::cout, pixel_color, samples_per_pixel);
             }
         }
-
+        img->save_bmp(outputfile.c_str());
         std::clog << "\rDone.                 \n";
     }
 
@@ -62,10 +79,14 @@ private:
     vec3 defocus_disk_u; // Defocus disk horizontal radius
     vec3 defocus_disk_v; // Defocus disk vertical radius
 
+    image *img;
+
     void initialize()
     {
         image_height = static_cast<int>(image_width / aspect_ratio);
         image_height = (image_height < 1) ? 1 : image_height;
+
+        img = new image(image_width, image_height);
 
         center = lookfrom;
 

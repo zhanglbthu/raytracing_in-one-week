@@ -147,13 +147,15 @@ private:
             return background;
 
         ray scattered;
-        color attenuation;
         color color_from_emission = rec.mat->emitted(rec.u, rec.v, rec.p);
+        double pdf;
+        color albedo;
 
-        if(!rec.mat->scatter(r, rec, attenuation, scattered))
+        if(!rec.mat->scatter(r, rec, albedo, scattered, pdf))
             return color_from_emission;
         
-        color color_from_scatter = attenuation * ray_color(scattered, depth-1, world);
+        color color_from_scatter = albedo * rec.mat->scattering_pdf(r, rec, scattered) 
+                                          * ray_color(scattered, depth - 1, world) / pdf;
 
         return color_from_emission + color_from_scatter;
     }

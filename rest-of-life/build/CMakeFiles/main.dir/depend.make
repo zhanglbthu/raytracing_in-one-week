@@ -13,6 +13,8 @@ CMakeFiles/main.dir/main.cpp.o: ../image.h
 CMakeFiles/main.dir/main.cpp.o: ../interval.h
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: ../material.h
+CMakeFiles/main.dir/main.cpp.o: ../onb.h
+CMakeFiles/main.dir/main.cpp.o: ../pdf.h
 CMakeFiles/main.dir/main.cpp.o: ../perlin.h
 CMakeFiles/main.dir/main.cpp.o: ../quad.h
 CMakeFiles/main.dir/main.cpp.o: ../ray.h

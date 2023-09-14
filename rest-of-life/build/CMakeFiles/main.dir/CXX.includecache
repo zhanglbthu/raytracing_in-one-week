@@ -31,6 +31,8 @@ material.h
 /home/zhanglb/code/project/raytracing/rest-of-life/material.h
 image.h
 /home/zhanglb/code/project/raytracing/rest-of-life/image.h
+pdf.h
+/home/zhanglb/code/project/raytracing/rest-of-life/pdf.h
 iomanip
 -
 chrono
@@ -147,6 +149,20 @@ hittable.h
 /home/zhanglb/code/project/raytracing/rest-of-life/hittable.h
 texture.h
 /home/zhanglb/code/project/raytracing/rest-of-life/texture.h
+onb.h
+/home/zhanglb/code/project/raytracing/rest-of-life/onb.h
+
+/home/zhanglb/code/project/raytracing/rest-of-life/onb.h
+rtweekend.h
+/home/zhanglb/code/project/raytracing/rest-of-life/rtweekend.h
+
+/home/zhanglb/code/project/raytracing/rest-of-life/pdf.h
+rtweekend.h
+/home/zhanglb/code/project/raytracing/rest-of-life/rtweekend.h
+onb.h
+/home/zhanglb/code/project/raytracing/rest-of-life/onb.h
+hittable_list.h
+/home/zhanglb/code/project/raytracing/rest-of-life/hittable_list.h
 
 /home/zhanglb/code/project/raytracing/rest-of-life/perlin.h
 rtweekend.h

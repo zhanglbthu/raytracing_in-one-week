@@ -13,6 +13,7 @@ SET(SOURCES
 
 SET(INCLUDES
         external/stb_image.h
+        pdf.h
         color.h
         ray.h
         hittable.h

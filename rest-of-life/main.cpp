@@ -245,11 +245,16 @@ void cornell_box() {
     box2 = make_shared<translate>(box2, vec3(130,0,65));
     world.add(box2);
 
+    // Light Sources
+    hittable_list lights;
+    auto m = shared_ptr<material>();
+    lights.add(make_shared<quad>(point3(343,554,332), vec3(-130,0,0), vec3(0,0,-105), m));
+
     camera cam;
 
     cam.aspect_ratio      = 1.0;
     cam.image_width       = 600;
-    cam.samples_per_pixel = 100;
+    cam.samples_per_pixel = 10;
     cam.max_depth         = 50;
     cam.background        = color(0,0,0);
 
@@ -260,7 +265,7 @@ void cornell_box() {
 
     cam.defocus_angle = 0;
 
-    cam.render(world);
+    cam.render(world, lights);
 }
 void cornell_smoke() {
     hittable_list world;

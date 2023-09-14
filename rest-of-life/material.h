@@ -4,6 +4,7 @@
 #include "rtweekend.h"
 #include "hittable.h"
 #include "texture.h"
+#include "onb.h"
 
 class material
 {
@@ -24,6 +25,11 @@ public:
     {
         return color(0, 0, 0);
     }
+
+    virtual color emitted(const ray& r_in, const hit_record& rec, double u, double v, const point3& p) const
+    {
+        return color(0, 0, 0);
+    }
 };
 
 class lambertian : public material
@@ -35,10 +41,12 @@ public:
     bool scatter(const ray &r_in, const hit_record &rec, color &alb, ray &scattered, double &pdf)
         const override
     {
-        auto direction = random_on_hemisphere(rec.normal);
+        onb uvw;
+        uvw.build_from_w(rec.normal);
+        auto direction = uvw.local(random_cosine_direction());
         scattered = ray(rec.p, unit_vector(direction), r_in.time());
         alb = albedo->value(rec.u, rec.v, rec.p);
-        pdf = 0.5 / pi;
+        pdf = dot(uvw.w(), scattered.direction()) / pi;
         return true;
     }
     double scattering_pdf(const ray &r_in, const hit_record &rec, const ray &scattered) const override
@@ -116,9 +124,12 @@ public:
     {
         return false;
     }
-    color emitted(double u, double v, const point3 &p) const override
+    color emitted(const ray& r_in, const hit_record& rec, double u, double v, const point3& p) const override
     {
-        return emit->value(u, v, p);
+        if (!rec.front_face)
+            return color(0, 0, 0);
+        else
+            return emit->value(u, v, p);
     }
 
 private:
